@@ -12,20 +12,20 @@ const postSchema = new mongoose.Schema({
     },
     model: {
         type: String,
-        required: "Model måste anges"
+        required: true
     },
     city: {
         type: String,
-        required: "Stad måste anges"
+        required: true
     },
     phone: {
         type: String,
-        required: "Telefon måste anges"
+        required: true
     },
     email: {
         type: String,
         trim: true,
-        required: "E-post måste anges"
+        required: true
     },
     photo: {
         data: Buffer,

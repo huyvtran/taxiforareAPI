@@ -5,12 +5,7 @@ exports.createPostValidator = (req, res, next) => {
         min: 4,
         max: 150
     });
-    // body
-    req.check('body', 'Skriv en beskrivning').notEmpty();
-    req.check('body', 'Beskrivningen måste vara mellan 4 och 150 tecken').isLength({
-        min: 4,
-        max: 2000
-    });
+
     // model
     req.check('model', 'fyll i bil modell').notEmpty();
     req.check('model', 'Beskrivningen måste vara mellan 4 och 20 tecken').isLength({
@@ -23,6 +18,14 @@ exports.createPostValidator = (req, res, next) => {
         min: 2,
         max: 20
     });
+
+    // body
+    req.check('body', 'Skriv en beskrivning').notEmpty();
+    req.check('body', 'Beskrivningen måste vara mellan 4 och 150 tecken').isLength({
+        min: 4,
+        max: 2000
+    });
+
     // phone
     req.check('phone', 'Vänligen fyll i ett telefonnummer').notEmpty();
     req.check('phone', 'Telefonnumret måste vara mellan 4 och 15 tecken').isLength({
